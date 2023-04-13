@@ -11,4 +11,4 @@ requirements-check:
     info: terraform is not installed
 command: 
   linux:
-    {{stack_path}}/templates/terraform init && terraform apply --auto-approve
+    terraform init && terraform apply --auto-approve

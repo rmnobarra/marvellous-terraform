@@ -9,7 +9,7 @@ terraform {
 
 provider "docker" {}
 
-resource "docker_image" "{{ container_name }}" {
+resource "docker_image" {{ container_name }} {
   name         = {{ docker_image }}
   keep_locally = false
 }

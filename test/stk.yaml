@@ -1,0 +1,13 @@
+applied_templates:
+- inputs: {}
+  template_data_path: ''
+- inputs:
+    container_name: '"nginx"'
+    container_port: '80'
+    docker_image: '"nginx:latest"'
+    host_port: '8000'
+  template_data_path: marvellous-terraform/marvellous-terraform-plugin
+global_computed_inputs: {}
+global_inputs: {}
+stack: stack-spot
+stack_type: app

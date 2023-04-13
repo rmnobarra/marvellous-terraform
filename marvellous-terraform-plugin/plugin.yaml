@@ -1,0 +1,40 @@
+name: marvellous-terraform-plugin
+description: A simple but marvellous terraform plugin for stackspot
+display-name: marvellous-terraform-plugin
+picture: plugin.png
+category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category
+compatibility:
+  - java
+  - spring
+about: docs/about.md
+usage: docs/usage.md
+use-case: docs/use-case.md
+implementation: docs/implementation.md
+technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/yaml/#technologies
+  - "Api"
+types:
+  - app
+inputs:
+  - label: Container name
+    type: text
+    name: container_name
+    default: '"nginx"'
+  - label: Image docker
+    type: text
+    name: docker_image
+    default: '"nginx:latest"'
+  - label: Container port
+    type: text
+    default: "80"
+    name: container_port
+  - label: Host port
+    type: text
+    name: host_port
+    default: "8000"
+
+hooks:
+  - type: run
+    trigger: before-input
+    commands:
+      - echo hello from before-input!
+      - echo you can define multiple commands in a run hook!

@@ -15,26 +15,15 @@ technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/ya
 types:
   - app
 inputs:
-  - label: Container name
+  - label: AWS Region
     type: text
-    name: container_name
-    default: '"nginx"'
-  - label: Image docker
+    name: region
+    default: '"us-east-1"'
+  - label: Size of Pub Subnets
     type: text
-    name: docker_image
-    default: '"nginx:latest"'
-  - label: Container port
+    name: number_of_public_subnets
+    default: "2"
+  - label: Size of prif Subnets
     type: text
-    default: "80"
-    name: container_port
-  - label: Host port
-    type: text
-    name: host_port
-    default: "8000"
-
-hooks:
-  - type: run
-    trigger: before-input
-    commands:
-      - echo hello from before-input!
-      - echo you can define multiple commands in a run hook!
+    default: "2"
+    name: number_of_private_subnets
